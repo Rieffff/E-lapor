@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <head>
@@ -71,7 +72,13 @@
     <div class="mt-6 flex justify-center">
         {{ $complaints->links() }}
     </div>
-
 </div>
-</body>
-</html>
+@endsection
+@push('scripts')
+<script>
+$(function () {
+  $('#complaintsTable').DataTable();
+});
+</script>
+@endpush
+
