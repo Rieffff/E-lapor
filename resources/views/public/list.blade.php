@@ -19,7 +19,12 @@
             <div class="flex items-center space-x-4">
                 <img src="{{ asset('logo.png') }}" alt="Logo Sekolah" class="w-16 h-16">
                 <div>
-                    <h1 class="text-xl md:text-2xl font-bold">SMP NEGERI 1 SITUBONDO</h1>
+                    <!-- Teks sekolah jadi link -->
+                    <h1 class="text-xl md:text-2xl font-bold">
+                        <a href="https://smpn1situbondo.sch.id/" target="_blank" class="hover:text-blue-600">
+                            SMP NEGERI 1 SITUBONDO
+                        </a>
+                    </h1>
                     <p class="text-sm text-gray-600">Jl. PB Sudirman No.5 Situbondo, Patokan</p>
                 </div>
             </div>
