@@ -43,4 +43,5 @@ class PublicComplaintController extends Controller
         $complaint = \App\Models\Complaint::with('responses.user')->findOrFail($id);
         return view('public.show', compact('complaint'));
     }
+
 }

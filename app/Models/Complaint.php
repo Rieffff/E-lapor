@@ -11,10 +11,13 @@ class Complaint extends Model
 
     protected $fillable = [
         'name','phone','email','message','attachment','status'
-    ];
-
-    public function responses()
+    ];  
+     public function responses()
     {
         return $this->hasMany(Response::class);
     }
+    
 }
+
+
+
