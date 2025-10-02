@@ -50,7 +50,7 @@
       </div>
     @endforeach
 
-    <form method="POST" action="{{ route('admin.complaints.status',$complaint->id) }}">
+    <form method="POST" action="{{ route('admin.complaints.makeResponse',$complaint->id) }}">
       @csrf
       <div class="form-group">
         <label>Balasan</label>

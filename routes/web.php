@@ -20,5 +20,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [AdminComplaintController::class,'index'])->name('admin.dashboard');
     Route::get('/complaints/{id}', [AdminComplaintController::class,'show'])->name('admin.complaints.show');
     Route::post('/complaints/{id}/status', [AdminComplaintController::class,'changeStatus'])->name('admin.complaints.status');
+    Route::post('/complaints/{id}/makeResponse', [AdminComplaintController::class,'makeResponse'])->name('admin.complaints.makeResponse');
     Route::post('/complaints/{id}/response', [ResponseController::class,'store'])->name('admin.complaints.response');
 });
