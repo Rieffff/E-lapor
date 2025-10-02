@@ -6,7 +6,9 @@ use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\AdminComplaintController;
 use App\Http\Controllers\ResponseController;
 
-Route::get('/', [PublicComplaintController::class,'form'])->name('public.form');
+Route::get('/complaints', [PublicComplaintController::class,'form'])->name('public.form');
+Route::get('/', [PublicComplaintController::class,'list'])->name('public.list');
+Route::get('/complaints/{id}', [PublicComplaintController::class,'show'])->name('public.show');
 Route::post('/complaints', [PublicComplaintController::class,'submit'])->name('public.submit');
 
 // Admin auth

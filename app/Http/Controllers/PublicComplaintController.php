@@ -32,4 +32,15 @@ class PublicComplaintController extends Controller
 
         return redirect()->back()->with('success','Terima kasih. Pengaduan Anda telah terkirim.');
     }
+    public function list()
+    {
+        $complaints = \App\Models\Complaint::latest()->get();
+        return view('public.list', compact('complaints'));
+    }
+
+    public function show($id)
+    {
+        $complaint = \App\Models\Complaint::with('responses.user')->findOrFail($id);
+        return view('public.show', compact('complaint'));
+    }
 }
