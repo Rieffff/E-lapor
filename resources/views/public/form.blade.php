@@ -50,7 +50,7 @@ Daftar Pengaduan Publik
             <!-- Lampiran -->
             <div>
                 <label class="block text-gray-600 font-medium mb-2">Lampiran (Opsional)</label>
-                <input type="file" name="attachment" class="w-full text-gray-500">
+                <input type="file" name="attachment" accept="image/png, image/gif, image/jpeg" class="w-full text-gray-500">
             </div>
 
             <!-- Tombol -->
