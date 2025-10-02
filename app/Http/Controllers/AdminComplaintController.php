@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Complaint;
-
+use Illuminate\Routing\Controller; // add this if not present
 class AdminComplaintController extends Controller
 {
     public function __construct()
@@ -29,7 +29,8 @@ class AdminComplaintController extends Controller
         $request->validate(['status'=>'required|in:baru,diproses,selesai']);
         $c = Complaint::findOrFail($id);
         $c->status = $request->status;
-        $c->save();
+        $c->save();  
         return back()->with('success','Status diperbarui');
+       
     }
 }
