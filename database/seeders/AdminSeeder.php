@@ -12,10 +12,11 @@ class AdminSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Admin Sekolah',
-            'email' => 'muhammad@smpn1situbondo.sch.id',
-            'password' => Hash::make('Wiii'), // ganti password 
-            //  run di terminal "php artisan db:seed --class=AdminSeeder"
-            
-        ]);
+    'email' => 'admin@smpn1situbondo.sch.id',
+    'password' => Hash::make('daniel'), // ganti password 
+
+    //  run di terminal "php artisan db:seed --class=AdminSeeder"
+    
+]);
     }
 }
