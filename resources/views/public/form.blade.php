@@ -54,16 +54,11 @@ Daftar Pengaduan Publik
             </div>
 
             <!-- Tombol -->
-            <div >
-                <button type="submit" class="inline-block px-5 py-2 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-xl shadow-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
+            <div class="text-center">
+                <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold rounded-xl shadow-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
                     Kirim Pengaduan
                 </button>
-                <a href="{{ route('public.list') }}" 
-                class="inline-block px-5 py-2 bg-gray-700 hover:bg-gray-800 text-white font-semibold rounded-lg shadow">
-                ← Kembali ke Daftar
-                </a>
             </div>
-            <!-- Tombol kembali --> 
         </form>
     </div>
 
