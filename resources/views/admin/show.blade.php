@@ -7,10 +7,38 @@
     <p><strong>Nama:</strong> {{ $complaint->name }}</p>
     <p><strong>Email:</strong> {{ $complaint->email }}</p>
     <p><strong>No HP:</strong> {{ $complaint->phone }}</p>
-    <p><strong>Status:</strong> {{ ucfirst($complaint->status) }}</p>
+    <form action="{{ route('admin.complaints.status',$complaint->id) }}" method="POST" class="mt-3">
+        @csrf
+        <label>Ubah status:
+            <select name="status" class="form-control">
+                <option value="baru" {{ $complaint->status=='baru' ? 'selected' : '' }}>Baru</option>
+                <option value="diproses" {{ $complaint->status=='diproses' ? 'selected' : '' }}>Diproses</option>
+                <option value="selesai" {{ $complaint->status=='selesai' ? 'selected' : '' }}>Selesai</option>
+            </select>
+        </label>
+        <button class="btn btn-warning">Simpan</button>
+    </form>
     <p><strong>Laporan:</strong><br>{{ $complaint->message }}</p>
+    <!-- Lampiran -->
     @if($complaint->attachment)
-      <p><a href="{{ asset('storage/'.$complaint->attachment) }}" target="_blank">📎 Lihat Lampiran</a></p>
+        <div class="col-lg-8">
+            <h2 class="text-lg font-semibold mb-2">📎 Lampiran:</h2>
+            @php
+                $ext = pathinfo($complaint->attachment, PATHINFO_EXTENSION);
+            @endphp
+
+            @if(in_array(strtolower($ext), ['jpg','jpeg','png','gif','webp']))
+                <img src="{{ asset('storage/' . $complaint->attachment) }}" 
+                     alt="Lampiran" 
+                     class="w-75 ">
+            @else
+                <a href="{{ asset('storage/' . $complaint->attachment) }}" 
+                   target="_blank" 
+                   class="">
+                   📂 Unduh Lampiran
+                </a>
+            @endif
+        </div>
     @endif
 
     <hr>
