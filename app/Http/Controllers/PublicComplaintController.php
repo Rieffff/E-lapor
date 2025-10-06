@@ -43,5 +43,10 @@ class PublicComplaintController extends Controller
         $complaint = \App\Models\Complaint::with('responses.user')->findOrFail($id);
         return view('public.show', compact('complaint'));
     }
+    public function index()
+    {
+        $complaints = \App\Models\Complaint::with('responses.user')->paginate(3); 
+        return view('public.index', compact('complaints'));
+    }
 
 }
