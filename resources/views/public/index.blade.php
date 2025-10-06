@@ -26,9 +26,7 @@
         <!-- Info Utama -->
         <div class="grid md:grid-cols-2 gap-6">
             <div>
-                <p class="mb-2"><span class="font-semibold text-gray-700">👤 Nama:</span> {{ maskMiddle($complaint->name) }}</p>
-                <p class="mb-2"><span class="font-semibold text-gray-700">📧 Email:</span> {{ maskMiddle($complaint->email) }}</p>
-                <p class="mb-2"><span class="font-semibold text-gray-700">📱 No HP:</span> {{ maskMiddle($complaint->phone) }}</p>
+               
             </div>
             <div class="flex items-start md:justify-end">
                 @php
@@ -46,8 +44,11 @@
 
         <!-- Isi Laporan -->
         <div class="mt-4 bg-white border-l-4 border-blue-500 p-4 rounded">
+             <p class="mb-2"><span class="font-semibold text-gray-700">👤 Nama:</span> {{ maskMiddle($complaint->name) }}</p>
+                <p class="mb-2"><span class="font-semibold text-gray-700">📧 Email:</span> {{ maskMiddle($complaint->email) }}</p>
+                <p class="mb-2"><span class="font-semibold text-gray-700">📱 No HP:</span> {{ maskMiddle($complaint->phone) }}</p>
             <h2 class="text-lg font-semibold mb-2">📝 Laporan:</h2>
-            <p class="text-gray-700 leading-relaxed">{{ $complaint->message }}</p>
+            <p class="text-gray-700 leading-relaxed max-width-400">{{ $complaint->message }}</p>
         </div>
 
         <!-- Respon Admin -->
