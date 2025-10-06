@@ -35,7 +35,7 @@ class AdminSeeder extends Seeder
             //  run di terminal "php artisan db:seed --class=AdminSeeder"
         ]);
         User::factory()->create([
-            'name' => 'Sutrisno,S.Pd',
+            'name' => 'Sutrisno,M.Pd',
             'Role' => 'Bidang Tata Usaha',
             'email' => 'sutrisno@smpn1situbondo.sch.id',
             'password' => Hash::make('Gemilang123@'), // ganti password 
@@ -55,7 +55,15 @@ class AdminSeeder extends Seeder
             'Role' => 'Bidang Teknologi Informasi',
             'email' => 'muhammad@smpn1situbondo.sch.id',
             'password' => Hash::make('Gemilang123@'), // ganti password 
-            'photos' => 'masganteng.png',
+            'photos' => 'masganteng2.png',
+            //  run di terminal "php artisan db:seed --class=AdminSeeder"
+        ]);
+        User::factory()->create([
+            'name' => 'Hj.Sri Rahaju Supandi,M.Pd',
+            'Role' => 'Kepala Sekolah',
+            'email' => 'yuyun@smpn1situbondo.sch.id',
+            'password' => Hash::make('Gemilang123@'), // ganti password 
+            'photos' => 'buyuyun.jpg',
             //  run di terminal "php artisan db:seed --class=AdminSeeder"
         ]);
         

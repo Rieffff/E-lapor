@@ -47,7 +47,7 @@
                 <span class="text-orange-500">📞</span>
                 <div>
                     <p class="text-xs font-semibold text-gray-800">TELEPON:</p>
-                    <p class="text-sm text-gray-600">(0338) 671550</p>
+                    <a href="http://wa.me/+6282334111967" style="text-decoration:none"><p class="text-sm text-gray-600">0823-3411-1967</p></a>
                 </div>
             </div>
         </div>
