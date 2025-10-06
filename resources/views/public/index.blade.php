@@ -53,21 +53,54 @@
 
         <!-- Respon Admin -->
         <div class="mt-6">
-            <h2 class="text-lg font-semibold mb-3">💬 Respon Admin:</h2>
-            <div class="space-y-4 divide-y divide-gray-200">
-                @forelse($complaint->responses as $r)
-                    <div class="pt-4 first:pt-0">
-                        <p class="text-sm text-gray-600 mb-1">
-                            👨‍💼 {{ $r->user->name }} 
-                            <span class="text-xs text-gray-500">({{ $r->created_at->format('d-m-Y H:i') }})</span>
-                        </p>
-                        <p class="text-gray-800">{{ $r->response }}</p>
+    <h2 class="text-lg font-semibold mb-3">💬 Respon Admin:</h2>
+    <div class="space-y-6 divide-y divide-gray-200">
+        @forelse($complaint->responses as $r)
+            <div class="pt-6 first:pt-0 flex items-start space-x-4" x-data="{ open: false }">
+                <!-- Foto Profil -->
+                <div class="flex flex-col items-center w-20">
+                    <img src="{{ asset('storage/profile/'.$r->user->photos) }}" 
+                         alt="Foto {{ $r->user->name }}" 
+                         class="w-16 h-16 rounded-full object-cover shadow-md cursor-pointer hover:opacity-80 transition"
+                         @click="open = true">
+
+                    <p class="text-sm font-semibold text-gray-800 mt-2">{{ $r->user->name }}</p>
+                    <p class="text-xs text-gray-500">{{ $r->user->Role }}</p>
+                </div>
+
+                <!-- Isi Respon -->
+                <div class="flex-1 bg-blue-50 border border-blue-200 rounded-lg shadow-sm p-4">
+                    <p class="text-xs text-gray-500 mb-2">
+                        🕒 {{ $r->created_at->format('d-m-Y H:i') }}
+                    </p>
+                    <p class="text-gray-800 leading-relaxed">{{ $r->response }}</p>
+                </div>
+
+                <!-- Modal Popup -->
+                <div x-show="open" 
+                     x-transition 
+                     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+                     @click.self="open = false">
+                    <div class="bg-white p-4 rounded-lg shadow-lg max-w-md w-full text-center">
+                        <img src="{{ asset('storage/profile/'.$r->user->photos) }}" 
+                             alt="Foto {{ $r->user->name }}" 
+                             class="mx-auto rounded-lg max-h-[70vh] object-contain">
+                        <p class="mt-3 font-semibold text-gray-800">{{ $r->user->name }}</p>
+                        <p class="text-sm text-gray-500">{{ $r->user->role }}</p>
+                        <button @click="open = false" 
+                                class="mt-4 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
+                            Tutup
+                        </button>
                     </div>
-                @empty
-                    <p class="italic text-gray-500">Belum ada respon dari admin.</p>
-                @endforelse
+                </div>
             </div>
-        </div>
+        @empty
+            <p class="italic text-gray-500">Belum ada respon dari admin.</p>
+        @endforelse
+    </div>
+</div>
+
+
     </div>
     @endforeach
 

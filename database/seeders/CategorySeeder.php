@@ -15,19 +15,19 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         //
-        User::factory()->create([
+        Category::factory()->create([
             'category' => 'Bidang Humas',
         ]);
-        User::factory()->create([
+        Category::factory()->create([
             'category' => 'Bidang Sarana dan Prasarana',
         ]);
-        User::factory()->create([
+        Category::factory()->create([
             'category' => 'Bidang Tata Usaha',
         ]);
-        User::factory()->create([
+        Category::factory()->create([
             'category' => 'Bidang Kurikulum',
         ]);
-        User::factory()->create([
+        Category::factory()->create([
             'category' => 'Bidang Kesiswaan dan Bimbingan konseling',
         ]);
     }

@@ -83,6 +83,8 @@
         document.getElementById("mobile-menu").classList.toggle("hidden");
     });
 </script>
+<script src="//unpkg.com/alpinejs" defer></script>
+
 
 
     <!-- KONTEN UTAMA -->

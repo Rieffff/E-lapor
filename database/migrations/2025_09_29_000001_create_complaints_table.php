@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('email');
             $table->text('message');
             $table->string('attachment')->nullable();
+            $table->ForeignId('category_id')->nullable()->constrained('categories')->onDelete('set null');
             $table->enum('status', ['baru','diproses','selesai'])->default('baru');
             $table->timestamps();
         });
